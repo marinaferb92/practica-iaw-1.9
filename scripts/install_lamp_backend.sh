@@ -3,6 +3,10 @@
 # Configuramos para mostrar los comandos y finalizar
 set -ex
 
+#Importamos el archivo .env
+
+source .env
+
 # Actualizamos el sistema
 apt update
 
@@ -18,17 +22,12 @@ a2enmod rewrite
 # Instalamos PHP y el módulo de Apache para PHP
 apt install php libapache2-mod-php php-mysql -y
 
-# Copiamos el archivo de configuración de Apache
-cp ../conf/000-default.conf /etc/apache2/sites-available/
-
 # Instalamos MySQL
 apt install mysql-server -y
 
-# Copiamos el script de prueba PHP
-cp ../php/index.php /var/www/html
+#Configuramos el archivo /etc/mysql/mysql.conf.d/mysqld.cnf
 
-# Modificamos el propietario y el grupo del archivo index.php
-chown -R www-data:www-data /var/www/html
+sed -i "s/127.0.0.1/$MYSQL_PRIVATE_IP/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Reiniciamos el servicio de Apache
 systemctl restart apache2
