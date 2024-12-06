@@ -1,5 +1,5 @@
 # practica-iaw-1.9
-#Arquitectura de una aplicación web LAMP en dos niveles
+# Arquitectura de una aplicación web LAMP en dos niveles
 ## 1. Introducción
 Este proyecto tiene como objetivo crear una arquitectura en dos niveles para una pila LAMP, configurando los servicios de manera automatizada utilizando scripts de Bash. Los pasos incluyen:
 
