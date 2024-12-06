@@ -46,8 +46,16 @@ El unico cambio que haremos será el de añadir una linea que configure el archi
 
 bind-address = 127.0.0.1
 
+por la IP privada de nuestra maquina de Frontend, asegurando que el unico servidor que pueda conectarse a nuestra base de datos sea este. 
 
+Para ello utilizaremos el comando *sed* 
 
+`sed -i "s/127.0.0.1/$MYSQL_PRIVATE_IP/" /etc/mysql/mysql.conf.d/mysqld.cnf`
+
+La variable *$MYSQL_PRIVATE_IP* estará definida dentro del archivo .env 
+[install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh)
+
+## 4. Instalación de pila LAMP en Backend.
 
 
 
