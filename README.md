@@ -41,11 +41,13 @@ Tambien crearemos y asociaremos dos IPs elásticas a cada una de ellas.
 El script para el Backend irá enfocada a la instalacíon y configuración de <ins>MySQL</ins>, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
 
 El unico cambio que haremos será el de añadir una linea que configure el archivo `/etc/mysql/mysql.conf.d/mysqld.cnf` para cambiar la directiva de configuración 
-``
+
+````
 [mysqld]
 
 bind-address = 127.0.0.1
-``
+````
+
 por la IP privada de nuestra maquina de Frontend, asegurando que el unico servidor que pueda conectarse a nuestra base de datos sea este. 
 
 Para ello utilizaremos el comando *sed* 
