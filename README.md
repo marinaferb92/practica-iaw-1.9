@@ -110,15 +110,36 @@ Con ellas realizamos las siguientes acciones:
 4. Crear este usuario.
 5. Darle todos los provilegios sobre la base de datos.
 
+Para que esto funcione correctamente deberemos configurar las siguientes variables en el archivo `.env`
+- WORDPRESS_DB_NAME = nombre de la base de datos
+- WORDPRESS_DB_USER = nombre del usuario 
+- FRONTEND_PRIVATE_IP = IP privada de la maquina Frontend
+- WORDPRESS_DB_PASSWORD = contraseña del usuario de la base de datos
 
 
 
+## 8. Configuracion Wordpress en el Frontend
+El siguiente paso para seguir con el despliegue de Wordpress sería el de configurar Instalar y configurar Wordpress en el servidor Frontend.
+El script que utilizaremos estará diseñado para automatizar la instalación y la configuración de *Wordpress*.
 
+Utilizaremos la misma estructura que en el `deploy_wordpress_with_wpcli.sh`de la [practica 1.7](https://github.com/marinaferb92/practica-iaw-1.7/blob/8a96bd92c27c430d7d369159c106e460c37e0053/scripts/deploy_wordpress_with_wpcli.sh)
 
+Aunque deberemos eliminar la parte de la creacion de la base de datos que ya hemos configurado en el  
+[deploy_wordpress_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/389b6e81c313e8916e1c3edefef1b3bbf349c50c/scripts/deploy_wordpress_backend.sh)
 
+En la creacion del archivo de configuración de WordPress deberemos cambiar la variable `$WORDPRESS_DB_HOST` por `$WORDPRESS_DB_PASSWORD` que introduciremos en el archivo `.env` y le pondremos como valor la IP privada de la maquina Backend. 
 
+````
+wp config create \
+  --dbname=$WORDPRESS_DB_NAME \
+  --dbuser=$WORDPRESS_DB_USER \
+  --dbpass=$WORDPRESS_DB_PASSWORD \ 
+  --dbhost=$BACKEND_PRIVATE_IP \
+  --path=$WORDPRESS_DIRECTORY \
+  --allow-root
+````
 
-
+Una vez hechos los cambios ejecutaremos el script [deploy_wordpress_frontend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/9586848899665226cdddb1822f3984e8297ac0c6/scripts/deploy_wordpress_frontend.sh)
 
 
 
