@@ -59,13 +59,12 @@ La variable *$MYSQL_PRIVATE_IP* estará definida dentro del archivo .env
 
 
 
-## 4. Instalación de pila LAMP en Backend.
+## 4. Instalación de pila LAMP en Frontend.
 El script para el *Frontend* irá enfocada a la instalación y configuración de <ins>Apache con PHP</ins> en el servidor, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
 
 Pero deberemos omitir todos los pasos relativos a la instalación de MySQL, ya que este servidor se conectará al Backend para acceder a la base de datos
 
 <ins>[SCRIPT install_lamp_frontend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/1fc251435079787e491f9fb4e09cf44661404c1e/scripts/install_lamp_frontend.sh) </ins>
-
 
 
 ## 5. Registrar un Nombre de Dominio
@@ -90,7 +89,26 @@ Para la realizacion de este apartado seguiremos los pasos detallados en la pract
 
 
 
+## 7. Configuracion de la base de datos de Wordpress en el Backend
+El siguiente paso para seguir con el despliegue de Wordpress sería el de configurar la base de datos en MySQL, 
+para ello ejecutaremos el siguiente script.
 
+[deploy_wordpress_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/47a5b265793e666a92b7484241ab0d5106d39fc4/scripts/deploy_wordpress_backend.sh)
+
+En el encontramos las siguientes lineas
+````
+mysql -u root <<< "DROP DATABASE IF EXISTS $WORDPRESS_DB_NAME"
+mysql -u root <<< "CREATE DATABASE $WORDPRESS_DB_NAME"
+mysql -u root <<< "DROP USER IF EXISTS $WORDPRESS_DB_USER@$FRONTEND_PRIVATE_IP"
+mysql -u root <<< "CREATE USER $WORDPRESS_DB_USER@$FRONTEND_PRIVATE_IP IDENTIFIED BY '$WORDPRESS_DB_PASSWORD'"
+mysql -u root <<< "GRANT ALL PRIVILEGES ON $WORDPRESS_DB_NAME.* TO $WORDPRESS_DB_USER@$FRONTEND_PRIVATE_IP"
+````
+Con ellas realizamos las siguientes acciones:
+1. Eliminar la base de datos si ya existe.
+2. Crear la base de datos definida en la variable $WORDPRESS_DB_NAME.
+3. Eliminar el usuario definido en $WORDPRESS_DB_USER que se conecta desde la IP $FRONTEND_PRIVATE_IP.
+4. Crear este usuario.
+5. Darle todos los provilegios sobre la base de datos.
 
 
 
