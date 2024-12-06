@@ -44,7 +44,6 @@ El unico cambio que haremos será el de añadir una linea que configure el archi
 
 ````
 [mysqld]
-
 bind-address = 127.0.0.1
 ````
 
