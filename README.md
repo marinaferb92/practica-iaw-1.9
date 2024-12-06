@@ -5,7 +5,9 @@ Este proyecto tiene como objetivo crear una arquitectura en dos niveles para una
 
 - Configuración del servidor web con Apache y PHP. <ins>(*Frontend*)</ins> 
 - Configuración del servidor MySQL con soporte para conexiones remotas. <ins>(*Backend*)</ins> 
-- Integración de una aplicación web que se conecta al servidor de base de datos remoto. <ins>(*Wordpress*)</ins> 
+- Integración de una aplicación web que se conecta al servidor de base de datos remoto. <ins>(*Wordpress*)</ins>
+
+[Usuario] --> [Servidor Apache/PHP] --> [Servidor MySQL]
 
 Para ello desarrollaremos varios scripts que dividiremos entre los que tenemos que instalar en la maquina que actuará con Frontend y otros que instalaremos en la maquina que actuará como Backend.
 
@@ -25,14 +27,24 @@ A continuacion, lanzaremos las instancias y seleccionaremos para cada una el gru
 
 Tambien crearemos y asociaremos dos IPs elásticas a cada una de ellas.
 
-la IP de la maquina <ins>*Frontend*</ins> es la siguiente
+- la IP de la maquina <ins>*Frontend*</ins> es la siguiente
 
   ![TWXoA6P5Op](https://github.com/user-attachments/assets/a5aec8b3-bd36-4085-9615-9babb266c538)
 
+- la IP de la maquina <ins>*Backend*</ins> es la siguiente
+
+  ![zHjLAoEvzB](https://github.com/user-attachments/assets/fcf52f0f-20a1-402c-98ba-4de8ff2c6747)
 
 
+## 3. Instalación de pila LAMP en Backend.
 
+El script para el Backend irá enfocada a la instalacíon y configuración de <ins>MySQL</ins>, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
 
+El unico cambio que haremos será el de añadir una linea que configure el archivo `/etc/mysql/mysql.conf.d/mysqld.cnf` para cambiar la directiva de configuración 
+
+[mysqld]
+
+bind-address = 127.0.0.1
 
 
 
