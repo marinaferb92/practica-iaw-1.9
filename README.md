@@ -57,6 +57,9 @@ La variable *$MYSQL_PRIVATE_IP* estará definida dentro del archivo .env
 
 <ins>[SCRIPT install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh) </ins>
 
+Podemos comprobar que podemos acceder a Mysql desde esta máquina
+
+  ![BNUQM1TTRL](https://github.com/user-attachments/assets/44569e9e-7024-457d-81be-927975f35960)
 
 
 ## 4. Instalación de pila LAMP en Frontend.
@@ -65,6 +68,14 @@ El script para el *Frontend* irá enfocada a la instalación y configuración de
 Pero deberemos omitir todos los pasos relativos a la instalación de MySQL, ya que este servidor se conectará al Backend para acceder a la base de datos
 
 <ins>[SCRIPT install_lamp_frontend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/1fc251435079787e491f9fb4e09cf44661404c1e/scripts/install_lamp_frontend.sh) </ins>
+
+Podemos comprobar la instalación de Apache y que este se está ejecutando bien.
+
+  ![y9qyWWmqIP](https://github.com/user-attachments/assets/d08b4cd5-93d2-471a-b183-d44209b13911)
+
+Podemos comprobar tambien que las maquinas pueden comunicarse entre si haciendo un ping de una a otra
+
+  ![WE6MMfYTtz](https://github.com/user-attachments/assets/1a0cc076-94ca-4cf8-a37e-4696c02e8a7a)
 
 
 ## 5. Registrar un Nombre de Dominio
@@ -142,9 +153,21 @@ wp config create \
 Una vez hechos los cambios ejecutaremos el script [deploy_wordpress_frontend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/9586848899665226cdddb1822f3984e8297ac0c6/scripts/deploy_wordpress_frontend.sh)
 
 
+# 9. Comprobaciones
 
+Tras la ejecución de todos los scripts en las maquinas correctas podremos meternos en el nombre de dominio que habiamos registrado y podremos poner en uso Wordpress
 
+  ![GWINR412sf](https://github.com/user-attachments/assets/1b8cc518-1a70-493f-ae85-5b2e8f258f69)
 
+  ![qhXRxMHz05](https://github.com/user-attachments/assets/c8ddcea2-75a2-4e93-9838-5fcff34610e5)
+
+Podemos tambien verificar que la instalación del certificado ha sido exitosa
+
+  ![zzYX9Eihf7](https://github.com/user-attachments/assets/ffd5ff1e-d9d3-4587-9f3d-f536fb828a38)
+
+Aunque que *Wordpress* funcione perfectamente, implica que el servidor *Frontend* esta comunicandose con el servidor *Backend* y puede acceder a su base de datos. Si queremos estar seguros de que la maquina front end se comunica con el backend, podemos instalar en esta MySQL y intentar entrar en MySQL desde esta.
+
+  ![14oRXB4B5i](https://github.com/user-attachments/assets/60f914c0-79c5-4016-a046-00b0aba20196)
 
 
 
