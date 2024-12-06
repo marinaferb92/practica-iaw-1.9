@@ -27,7 +27,7 @@ wp core download \
   --path=$WORDPRESS_DIRECTORY \
   --allow-root
 
-# Crear el archivo de configuración de WordPress (configuración sin base de datos)
+# Crear el archivo de configuración de WordPress 
 wp config create \
   --dbname=$WORDPRESS_DB_NAME \
   --dbuser=$WORDPRESS_DB_USER \
@@ -36,7 +36,7 @@ wp config create \
   --path=$WORDPRESS_DIRECTORY \
   --allow-root
 
-# Instalar WordPress (sin crear base de datos, solo configurando el frontend)
+# Instalar WordPress 
 wp core install \
   --url=$LE_DOMAIN \
   --title="$WORDPRESS_TITLE" \
