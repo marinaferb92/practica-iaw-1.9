@@ -62,7 +62,7 @@ El script para el *Frontend* irá enfocada a la instalación y configuración de
 
 Pero deberemos omitir todos los pasos relativos a la instalación de MySQL, ya que este servidor se conectará al Backend para acceder a la base de datos
 
-<ins>[SCRIPT install_lamp_frontend.sh]([https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/1fc251435079787e491f9fb4e09cf44661404c1e/scripts/install_lamp_frontend.sh)) </ins>
+<ins>[SCRIPT install_lamp_frontend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/1fc251435079787e491f9fb4e09cf44661404c1e/scripts/install_lamp_frontend.sh) </ins>
 
 
 
