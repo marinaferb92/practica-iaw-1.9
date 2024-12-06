@@ -57,6 +57,8 @@ La variable *$MYSQL_PRIVATE_IP* estará definida dentro del archivo .env
 
 <ins>[SCRIPT install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh) </ins>
 
+
+
 ## 4. Instalación de pila LAMP en Backend.
 El script para el *Frontend* irá enfocada a la instalación y configuración de <ins>Apache con PHP</ins> en el servidor, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
 
@@ -66,6 +68,25 @@ Pero deberemos omitir todos los pasos relativos a la instalación de MySQL, ya q
 
 
 
+## 5. Registrar un Nombre de Dominio
+
+Usamos un proveedor gratuito de nombres de dominio como son Freenom o No-IP.
+En nuestro caso lo hemos hecho a traves de No-IP, nos hemos registrado en la página web y hemos registrado un nombre de dominio con la IP pública del servidor.
+
+En el registro del dominio debemos poner la IP publica de la <ins>máquina Frontend</ins> que sera donde instalaremos Wordpress
+
+   ![JUGvuKsF0V](https://github.com/user-attachments/assets/1315802e-f516-423a-b6fd-dc07ae6e5ca6)
+
+
+
+## 6. Instalar Certbot y Configurar el Certificado SSL/TLS con Let’s Encrypt
+Para la realizacion de este apartado seguiremos los pasos detallados en la practica-iaw-1.5 y utilizaremos el script ``` setup_letsencrypt_certificate.sh ```.
+
+- Este script se ejecutará en la <ins>máquina Frontend</ins> 
+
+[Practica-iaw-1.5](https://github.com/marinaferb92/practica-iaw-1.5)
+
+[Script setup_letsencrypt_certificate.sh](scripts/setup_letsencrypt_certificate.sh)
 
 
 
