@@ -38,7 +38,7 @@ Tambien crearemos y asociaremos dos IPs elásticas a cada una de ellas.
 
 ## 3. Instalación de pila LAMP en Backend.
 
-El script para el Backend irá enfocada a la instalacíon y configuración de <ins>MySQL</ins>, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
+El script para el *Backend* irá enfocada a la instalación y configuración de <ins>MySQL</ins>, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
 
 El unico cambio que haremos será el de añadir una linea que configure el archivo `/etc/mysql/mysql.conf.d/mysqld.cnf` para cambiar la directiva de configuración 
 
@@ -58,6 +58,38 @@ La variable *$MYSQL_PRIVATE_IP* estará definida dentro del archivo .env
 <ins>[SCRIPT install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh) </ins>
 
 ## 4. Instalación de pila LAMP en Backend.
+El script para el *Frontend* irá enfocada a la instalación y configuración de <ins>Apache con PHP</ins> en el servidor, seguiremos el mismo esquema que hemos seguido anteriormente [Pactica 1.1 script install LAMP](https://github.com/marinaferb92/practica-iaw-1.1/blob/03508db12ab4537559efa67ba80acf9b137da50e/scripts/install_lamp.sh) 
+
+Pero deberemos omitir todos los pasos relativos a la instalación de MySQL, ya que este servidor se conectará al Backend para acceder a la base de datos
+
+<ins>[SCRIPT install_lamp_frontend.sh]([https://github.com/marinaferb92/practica-iaw-1.9/blob/4a77fa3e6f3dafd380c8ef5e70cad00e2a2e3023/scripts/install_lamp_backend.sh](https://github.com/marinaferb92/practica-iaw-1.9/blob/1fc251435079787e491f9fb4e09cf44661404c1e/scripts/install_lamp_frontend.sh)) </ins>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
